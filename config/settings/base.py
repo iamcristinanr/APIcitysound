@@ -77,6 +77,8 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.mfa",
     "allauth.socialaccount",
+    "dj_rest_auth",
+    "dj_rest_auth.registration",
     "django_celery_beat",
     "rest_framework",
     "rest_framework.authtoken",
@@ -86,7 +88,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "citysound.users",
-    "citysound.tours"
+    "citysound.tours",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -343,4 +345,3 @@ SPECTACULAR_SETTINGS = {
     "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAdminUser"],
 }
 # Your stuff...
-# ------------------------------------------------------------------------------
