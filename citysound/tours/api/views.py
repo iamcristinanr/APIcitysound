@@ -24,7 +24,7 @@ class TourViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
     def get_queryset(self):
         queryset = Tour.objects.all()
         location = self.request.query_params.get('location', None)
-        created_by_name = self.reqeust.query_params.get('created_by', None)
+        created_by_name = self.request.query_params.get('created_by', None)
         name = self.request.query_params.get('name', None)
         
         conditions = Q()
@@ -49,7 +49,7 @@ class TourStopViewSet(RetrieveModelMixin, ListModelMixin, GenericViewSet):
             queryset = Stop.objects.filter(tour_id=tour_id).order_by('name')
         else:
             queryset = Stop.objects.none()
-        return querysets
+        return queryset
 
 class TourCommentViewSet(CreateModelMixin, RetrieveModelMixin, ListModelMixin, GenericViewSet):
     serializer_class = CommentSerializer

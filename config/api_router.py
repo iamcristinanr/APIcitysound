@@ -8,7 +8,7 @@ from citysound.tours.api.views import TourViewSet, TourStopViewSet, TourCommentV
 router = DefaultRouter() if settings.DEBUG else SimpleRouter()
 
 router.register("users", UserViewSet)
-router.register("tour", TourViewSet, TourStopViewSet)
+router.register("tours", TourViewSet, TourStopViewSet)
 router.register(r"tours/(?P<tour_id>[^/.]+)/stops", TourStopViewSet, basename='tour-stops')
 router.register(r"tours/(?P<tour_id>[^/.]+)/comments", TourCommentViewSet, basename='tour-comments')
 
