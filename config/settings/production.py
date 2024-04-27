@@ -59,7 +59,6 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
 )
 
 # STORAGES
-
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -68,10 +67,6 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-MEDIA_URL = f"https://{aws_s3_domain}/media/"
-COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
-STATIC_URL = f"https://{aws_s3_domain}/static/"
-
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
@@ -90,7 +85,7 @@ EMAIL_SUBJECT_PREFIX = env(
 # ADMIN
 # ------------------------------------------------------------------------------
 # Django Admin URL regex.
-ADMIN_URL = env("DJANGO_ADMIN_URL")
+#ADMIN_URL = env("DJANGO_ADMIN_URL")
 
 # Anymail
 # ------------------------------------------------------------------------------
@@ -155,7 +150,7 @@ LOGGING = {
 # -------------------------------------------------------------------------------
 # Tools that generate code samples can use SERVERS to point to the correct domain
 SPECTACULAR_SETTINGS["SERVERS"] = [
-    {"url": "https://app.citysound.com", "description": "Production server"},
+    {"url": "https://cristinanietoromero.com", "description": "Production server"},
 ]
 # Your stuff...
 # ------------------------------------------------------------------------------
